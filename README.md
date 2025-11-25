@@ -5,4 +5,4 @@ Tugas Besar ini terdiri dari 4 orang anggota, yaitu:
 -Axel Jeremy              6182301003
 -Joseph Davin Christian   6182301015
 -Alexander Constantijn    6182301031
--Keane Edbert Chandra     6182301075
+-Keane Edbert Candra     6182301075
