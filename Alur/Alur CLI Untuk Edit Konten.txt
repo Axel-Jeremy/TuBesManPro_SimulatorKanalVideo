@@ -1,0 +1,9 @@
+Menyusun Alur CLI Untuk Edit Konten
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih opsi View Your Channel
+Pilih opsi View Video List
+Pilih opsi Choose Video
+Masukkan video yang ingin dipilih
+Pilih opsi Edit Video

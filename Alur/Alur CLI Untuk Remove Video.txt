@@ -1,0 +1,9 @@
+Menyusun Alur CLI Untuk Remove Video
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih opsi View Your Channel
+Pilih opsi View Video List
+Pilih opsi Choose Video
+Masukkan video yang ingin dipilih
+Pilih opsi take down video

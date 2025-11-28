@@ -1,0 +1,8 @@
+Menyusun Alur CLI Untuk Membuat Kanal
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih opsi Create Channel
+Masukan nama channel
+Masukan Deskripsi
+Masukan link website

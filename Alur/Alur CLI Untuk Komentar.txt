@@ -1,0 +1,10 @@
+Menyusun Alur CLI Untuk Komentar
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih opsi menonton video
+Pilih opsi choose video
+Select video yang dipilih
+Pilih opsi Komen
+Masukan isi komentar
+Pilih opsi publish komen
