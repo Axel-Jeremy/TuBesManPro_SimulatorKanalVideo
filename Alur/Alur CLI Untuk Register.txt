@@ -1,0 +1,8 @@
+ALur CLI Untuk Register
+
+Pilih Opsi Register
+Isi Username
+Isi Email
+Isi Password
+Isi Konfirmasi Password
+Redirect ke halaman LogIn

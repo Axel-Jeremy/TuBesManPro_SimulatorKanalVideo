@@ -1,0 +1,5 @@
+ALur CLI Untuk Melihat Kanal
+
+Pilih opsi Tonton Video
+Pilih Video 
+Pilih Opsi Lihat Kanal
