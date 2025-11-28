@@ -1,0 +1,41 @@
+* +++++ BAGIAN YANG NOT SIGN IN +++++
+ * - Menu awal
+ * - menu not sign in
+ * - sign in
+ * - register
+ * - video not sign in
+ * - watch not sign in
+ * - view channel not sign in
+ *
+ *
+ * +++++ BAGIAN YANG SUDAH SIGN IN +++++
+ * - menu sign in
+ * - video sign in
+ * - watch sign in
+ * - view channel sign in
+ * - menu After Channel Created Individu
+ * - menu after channel created group
+ * - chooseRole
+ * - view subscribed channel
+ * 
+ * 
+ * +++++ KANAL INDIVIDU +++++
+ * - create channel
+ * - channel individual
+ * - view dashboard individual
+ * 
+ * +++++ KANAL GROUP +++++
+ * - create channel grop
+ * - create brand account
+ * - channel group
+ * - add group member
+ * - edit group member
+ * - view group member
+ * - view dashboard group
+ * 
+ * +++++ METHOD SHARING +++++
+ * - view Subscriber List
+ * - view video list
+ * - upload video
+ * - view Channel Analysis
+ * - manage video
