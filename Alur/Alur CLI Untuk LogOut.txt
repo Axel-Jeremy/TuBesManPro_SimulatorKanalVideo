@@ -1,0 +1,5 @@
+Menyusun Alur CLI Untuk LogOut
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih Menu SignOut

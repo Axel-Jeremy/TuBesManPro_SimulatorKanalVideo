@@ -1,0 +1,6 @@
+ALur CLI Untuk Subscribe
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih menonton video
+Pilih opsi Subscribe Channel
