@@ -6,4 +6,4 @@ Pilih opsi View Your Channel
 Pilih opsi View Video List
 Pilih opsi Choose Video
 Masukkan video yang ingin dipilih
-Edit Video
+Pilih opsi Edit Video
