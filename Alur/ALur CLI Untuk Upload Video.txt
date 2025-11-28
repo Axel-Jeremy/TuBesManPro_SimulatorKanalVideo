@@ -1,0 +1,10 @@
+ALur CLI Untuk Upload Video
+
+Pilih menu SignIn
+Masukkan Email dan Password
+Pilih opsi View Your Channel
+Pilih opsi Upload Video
+Masukkkan Judul Video
+Masukkan Path Video
+Masukkan Deskripsi Video
+Masukkan Durasi Video
