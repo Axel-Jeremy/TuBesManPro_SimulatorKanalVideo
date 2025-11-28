@@ -24,3 +24,18 @@
  * - channel individual
  * - view dashboard individual
  * 
+ * +++++ KANAL GROUP +++++
+ * - create channel grop
+ * - create brand account
+ * - channel group
+ * - add group member
+ * - edit group member
+ * - view group member
+ * - view dashboard group
+ * 
+ * +++++ METHOD SHARING +++++
+ * - view Subscriber List
+ * - view video list
+ * - upload video
+ * - view Channel Analysis
+ * - manage video
