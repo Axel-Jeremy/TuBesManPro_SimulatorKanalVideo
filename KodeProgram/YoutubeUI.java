@@ -1346,7 +1346,6 @@ public class YoutubeUI {
 // Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 // Aman ges
 
-
-// Implementasi fitur dislike
+// Hapus video pada kanal individu & grup
 // Sprint 4
-// Mengimplementasikan fitur dislike
+// mengimplementasikan fitur hapus video untuk kedua tipe kanal
