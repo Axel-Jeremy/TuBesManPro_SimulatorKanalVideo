@@ -1314,25 +1314,27 @@ public class YoutubeUI {
  * - manage video
  */
 
-
 /*
-Implementasi Manajemen Upload Video
-// Sistem hak akses owner
-// Sprint 3
-// Mengatur hak akses khusus owner agar dapat
-// mengelola fitur dan data secara penuh,
-// seperti mengakses channel, mengubah member,
-// dan menginvite member.
-/*
-Sistem Hak Akses Subtitle Editor
-/*
-Implementasi Hak Akses Editor Limited
-pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
-UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
-hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
-viewer, DLL.
-Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
-*/
+ * Implementasi Manajemen Upload Video
+ * // Sistem hak akses owner
+ * // Sprint 3
+ * // Mengatur hak akses khusus owner agar dapat
+ * // mengelola fitur dan data secara penuh,
+ * // seperti mengakses channel, mengubah member,
+ * // dan menginvite member.
+ * /*
+ * Sistem Hak Akses Subtitle Editor
+ * /*
+ * Implementasi Hak Akses Editor Limited
+ * pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode
+ * kode yang akan berguna bagi
+ * UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video,
+ * sistem sistem hak akses
+ * hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses
+ * subtitle dan hak akses editor,
+ * viewer, DLL.
+ * Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
+ */
 */
 
 // Implementasi sistem hak akses manager
@@ -1341,6 +1343,8 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 // memantau dan mengelola data sesuai
 // kewenangan.
 
+// Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
+// Aman ges
 
 //Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 //Aman ges
@@ -1348,3 +1352,21 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 // Untuk fitur upload video pada kanal individu dan group
 // Pemilik kanal akan mampu untuk menambahkan video pada kaun kanal nya yang terintegrasi dengan DB
 // Disimpan dalam bentuk path yang nantinya akan bisa ditonton oleh user
+// Beranda Kanal akan membuat tampilan pada CLI yang menunjukan beranda pada kanal 
+// Didalamnya akan ada daftar video, Profil kanal, dan statistik singkat tentang kanal tersebut
+// 
+/*
+ * connection.setQuery("update Pengguna set jabatan = '" + jabatan[choiceeee -
+ * 1] + "' where namaP ='"
+ * + memberName + "' and idKanal = '" + idKanal + "'");
+ * connection.setQuery(
+ * "update Pengguna set jabatan = null, tanggal_Undang = null, idKanal = null where namaP ='"
+ * + memberName + "' and idKanal = '" + idKanal + "'");
+ * connection.exeInsertQuery();
+ * connection.setQuery(
+ * "update KanalGroup set jumlah_Anggota = jumlah_Anggota -1 where idKanal ='" +
+ * idKanal + "'");
+ * connection.exeInsertQuery();
+ */
+//i love the smell of gunpowder in the morning
+//Edit profil kanal individu & grup
