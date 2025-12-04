@@ -810,8 +810,8 @@ public class YoutubeUI {
                 viewDashboardIndividual(idKanal);
                 break;
             // case 3:
-            //     uploadVideo(0, idKanal);
-            //     break;
+            // uploadVideo(0, idKanal);
+            // break;
             default:
                 menuAfterChannelCreatedIndividu();
                 break;
@@ -952,8 +952,8 @@ public class YoutubeUI {
                 viewDashboardGroup(idKanal);
                 break;
             // case 3:
-            //     uploadVideo(1, idKanal);
-            //     break;
+            // uploadVideo(1, idKanal);
+            // break;
             case 4:
                 viewMemberList(idKanal);
                 break;
@@ -1023,14 +1023,14 @@ public class YoutubeUI {
             System.out.print("Select Member to Edit: ");
             int pilihan = sc.nextInt();
 
-                editGroupMember(memberList[pilihan - 1], idKanal);
+            editGroupMember(memberList[pilihan - 1], idKanal);
 
-                System.out.print("Back to Channel? (Y/N): ");
-                if (sc.next().charAt(0) == 'Y') {
-                    channelGroup();
-                } else {
-                    viewMemberList(idKanal);
-                }
+            System.out.print("Back to Channel? (Y/N): ");
+            if (sc.next().charAt(0) == 'Y') {
+                channelGroup();
+            } else {
+                viewMemberList(idKanal);
+            }
         }
     }
 
@@ -1317,9 +1317,27 @@ public class YoutubeUI {
 
 /*
 Implementasi Manajemen Upload Video
+// Sistem hak akses owner
+// Sprint 3
+// Mengatur hak akses khusus owner agar dapat
+// mengelola fitur dan data secara penuh,
+// seperti mengakses channel, mengubah member,
+// dan menginvite member.
+/*
+Sistem Hak Akses Subtitle Editor
+/*
+Implementasi Hak Akses Editor Limited
 pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
 UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
 hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
 viewer, DLL.
 Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 */
+*/
+
+// Implementasi sistem hak akses manager
+// Sprint 3
+// Mengatur hak akses manager agar dapat
+// memantau dan mengelola data sesuai
+// kewenangan.
+
