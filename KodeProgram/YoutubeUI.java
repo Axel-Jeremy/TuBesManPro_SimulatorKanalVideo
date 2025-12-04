@@ -1346,4 +1346,17 @@ public class YoutubeUI {
 // Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 // Aman ges
 
+/*
+ * connection.setQuery("update Pengguna set jabatan = '" + jabatan[choiceeee -
+ * 1] + "' where namaP ='"
+ * + memberName + "' and idKanal = '" + idKanal + "'");
+ * connection.setQuery(
+ * "update Pengguna set jabatan = null, tanggal_Undang = null, idKanal = null where namaP ='"
+ * + memberName + "' and idKanal = '" + idKanal + "'");
+ * connection.exeInsertQuery();
+ * connection.setQuery(
+ * "update KanalGroup set jumlah_Anggota = jumlah_Anggota -1 where idKanal ='" +
+ * idKanal + "'");
+ * connection.exeInsertQuery();
+ */
 //i love the smell of gunpowder in the morning
