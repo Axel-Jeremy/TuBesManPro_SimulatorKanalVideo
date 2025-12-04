@@ -1315,7 +1315,7 @@ public class YoutubeUI {
  */
 
 
-// Implementasi sistem hak akses
+// Implementasi sistem hak akses manager
 // Sprint 3
 // Mengatur hak akses manager agar dapat
 // memantau dan mengelola data sesuai
