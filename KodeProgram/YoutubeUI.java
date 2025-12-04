@@ -294,6 +294,24 @@ public class YoutubeUI {
             if (pilihan == 1) {
                 viewChannelNotSignedIn(choice);
                 break;
+            } else if (pilihan == 2) {
+                System.out.println("\n\nNo-Username----------------Komen--------------");
+                connection.setQuery(
+                        "select namaP, isiKomen from (select idPengguna, isiKomen from Komen where idKonten = '"
+                                + choice
+                                + "') as komenKonten JOIN Pengguna ON Pengguna.idPengguna = komenKonten.idPengguna");
+                connection.printQuerywithNumber(2, Integer.MAX_VALUE);
+                System.out.println("------------------------------------------------");
+
+                System.out.println();
+                while (true) {
+                    System.out.print("Back? (Y/N):");
+                    char back = sc.next().charAt(0);
+                    if (back == 'Y') {
+                        videonotSignIn(choice);
+                        break;
+                    }
+                }
             } else if (pilihan == 3) {
                 menuNotSignedIn();
                 break;
@@ -633,8 +651,140 @@ public class YoutubeUI {
             int pilihan = sc.nextInt();
             String res = "";
             switch (pilihan) {
+                case 1:
+                    // idKonten INT FOREIGN KEY (idKonten) REFERENCES Konten (idKonten),
+                    // idPengguna int FOREIGN KEY (idPengguna) REFERENCES Pengguna (idPengguna)
+                    // tanggalLike date,
+                    // status_Penghapusan int
+                    connection.setQuery("select status_Penghapusan from Likes where idPengguna = '" + currentUserId
+                            + "' and idKonten = '" + choice + "'");
+                    res = connection.exeQuery(1, 1).trim();
+                    if (res.equals("")) {
+                        connection.setQuery("insert into Likes values ('" + choice + "', '" + currentUserId + "', '"
+                                + LocalDate.now() + "', '0')");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully liked the video.");
+                    } else if (res.equals("1")) {
+                        connection.setQuery("update Likes set status_Penghapusan = '0', tanggalLike ='"
+                                + LocalDate.now() + "' where idPengguna = '" + currentUserId + "' and idKonten = '"
+                                + choice + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully liked the video.");
+                    } else {
+                        connection.setQuery(
+                                "update Likes set status_Penghapusan  = '1' where idKonten= '" + choice + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully un-liked the video.");
+                    }
+                    break;
+
+                case 2:
+                    connection.setQuery("select status_Penghapusan from Dislike where idPengguna = '" + currentUserId
+                            + "' and idKonten = '" + choice + "'");
+                    res = connection.exeQuery(1, 1).trim();
+                    if (res.equals("")) {
+                        connection.setQuery("insert into Dislike values ('" + choice + "', '" + currentUserId + "', '"
+                                + LocalDate.now() + "', '0')");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully disliked the video.");
+                    } else if (res.equals("1")) {
+                        connection.setQuery("update Dislike set status_Penghapusan = '0', tanggalDislike ='"
+                                + LocalDate.now() + "' where idPengguna = '" + currentUserId + "' and idKonten = '"
+                                + choice + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully disliked the video.");
+                    } else {
+                        connection.setQuery(
+                                "update Dislike set status_Penghapusan  = '1' where idKonten = '" + choice + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully un-disliked the video.");
+                    }
+                    break;
+                case 3:
+                    // idKanal int,
+                    // idPengguna int,
+                    // tanggalSubscribe date,
+                    // tanggalUnsubscribe date,
+                    // status_Penghapusan int
+                    connection.setQuery("select idKanal from Konten where idKonten = '" + choice + "'");
+                    String idKanal = connection.exeQuery(1, 1).trim();
+
+                    connection.setQuery("select status_Penghapusan from Subscribe where idPengguna = '" + currentUserId
+                            + "' and idKanal = '" + idKanal + "'");
+                    res = connection.exeQuery(1, 1).trim();
+
+                    if (res.equals("")) {
+                        connection
+                                .setQuery("insert into Subscribe values ('" + idKanal + "', '" + currentUserId + "', '"
+                                        + LocalDate.now() + "', null, '0')");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully subscribed the video.");
+                    } else if (res.equals("1")) {
+                        connection.setQuery("update Subscribe set status_Penghapusan = '0', tanggalSubscribe ='"
+                                + LocalDate.now() + "' where idPengguna = '" + currentUserId + "' and idKanal = '"
+                                + idKanal + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully subscribed the video.");
+                    } else {
+                        connection.setQuery("update Subscribe set status_Penghapusan = '1', tanggalUnsubscribe ='"
+                                + LocalDate.now() + "' where idPengguna = '" + currentUserId + "' and idKanal = '"
+                                + idKanal + "'");
+                        connection.exeInsertQuery();
+
+                        System.out.println("You have successfully un-subscribed the video.");
+                    }
+                    break;
+
                 case 4:
+                    // connection.setQuery("select namaKanal from (select idKanal from Konten where
+                    // idKonten = '" + choice + "') as kontenId join Kanal ON kontenId.idKanal =
+                    // Kanal.idKanal");
+                    // viewChannelSignedIn(connection.exeQuery(1, 1).trim());
                     viewChannelSignedIn(choice);
+                    break;
+                case 5:
+                    System.out.println("Enter your comment here : ");
+                    String comment = sc.nextLine();
+                    sc.next();
+                    System.out.println();
+                    System.out.print("Do you want to publish this comment? (Y/N) : ");
+                    String publish = sc.next();
+
+                    if (publish.equalsIgnoreCase("Y")) {
+                        connection.setQuery("insert into Komen values('" + choice + "', '" + currentUserId + "', '"
+                                + LocalDate.now() + "', '" + comment + "', '0')");
+                        connection.exeInsertQuery();
+                        System.out.println("Your comment has been successfully uploaded!");
+                    }
+                    break;
+                case 6:
+                    System.out.println("\n\nNo-Username----------------Komen--------------");
+
+                    connection.setQuery(
+                            "select namaP, isiKomen from (select idPengguna, isiKomen from Komen where idKonten = '"
+                                    + choice
+                                    + "') as komenKonten JOIN Pengguna ON Pengguna.idPengguna = komenKonten.idPengguna");
+                    connection.printQuerywithNumber(2, Integer.MAX_VALUE);
+                    System.out.println("----------------------------------------------");
+
+                    System.out.println();
+                    while (true) {
+                        System.out.print("Back? (Y/N):");
+                        char back = sc.next().charAt(0);
+                        if (back == 'Y') {
+                            videoSignIn(choice, pembeda);
+                            break;
+                        }
+                    }
+
                     break;
                 case 7:
                     if (pembeda == 0)
@@ -665,7 +815,7 @@ public class YoutubeUI {
         int pilihan = sc.nextInt();
         switch (pilihan) {
             case 1:
-                watchSignInOneChannel(idKanal);
+                watchSignInOneChannel(idKanal);// // // //
                 break;
             case 2:
                 viewChannelDescription(idKanal, namaKanal, choice);
@@ -809,9 +959,9 @@ public class YoutubeUI {
             case 2:
                 viewDashboardIndividual(idKanal);
                 break;
-            // case 3:
-            // uploadVideo(0, idKanal);
-            // break;
+            case 3:
+                uploadVideo(0, idKanal);
+                break;
             default:
                 menuAfterChannelCreatedIndividu();
                 break;
@@ -951,11 +1101,19 @@ public class YoutubeUI {
             case 2:
                 viewDashboardGroup(idKanal);
                 break;
-            // case 3:
-            // uploadVideo(1, idKanal);
-            // break;
+            case 3:
+                uploadVideo(1, idKanal);
+                break;
             case 4:
                 viewMemberList(idKanal);
+                break;
+            case 5:
+                if (currentUserRole == 0)
+                    addGroupMember(idKanal);
+                else{
+                    System.out.println("You cannot access this feature because of your role.");
+                    channelGroup();
+                }
                 break;
             default:
                 menuAfterChannelCreatedGroup();
@@ -1023,13 +1181,16 @@ public class YoutubeUI {
             System.out.print("Select Member to Edit: ");
             int pilihan = sc.nextInt();
 
-            editGroupMember(memberList[pilihan - 1], idKanal);
-
-            System.out.print("Back to Channel? (Y/N): ");
-            if (sc.next().charAt(0) == 'Y') {
-                channelGroup();
+            if (currentUserRole == 1 || currentUserRole == 0) {
+                editGroupMember(memberList[pilihan - 1], idKanal);
             } else {
-                viewMemberList(idKanal);
+                System.out.println("You do not have access to this feature because you are not Owner / Manager.");
+                System.out.print("Back to Channel? (Y/N): ");
+                if (sc.next().charAt(0) == 'Y') {
+                    channelGroup();
+                } else {
+                    viewMemberList(idKanal);
+                }
             }
         }
     }
@@ -1196,6 +1357,91 @@ public class YoutubeUI {
 
             manageVideo(pilihan, pembeda);
         }
+
+    }
+
+    public static void uploadVideo(int pembeda, String idKanal) {
+        if (currentUserRole == 5) {
+            System.out.println("You cannot access this feature because of your role.");
+            if (pembeda == 0) {
+                channelIndividual();
+            } else {
+                channelGroup();
+            }
+        } else {
+            System.out.print("Set Title     : ");
+            String title = sc.next() + sc.nextLine();
+            boolean video = false;
+            String path = "";
+            while (!video) {
+                System.out.print("Upload Video Path      : ");
+                path = sc.next();
+                path.trim();
+
+                File file = new File(path);
+
+                if (file.exists() || file.isFile()) {
+                    if (path.toLowerCase().endsWith(".mp4"))
+                        video = true;
+                } else
+                    System.out.println("Path is not valid. Please re-try.");
+            }
+
+            // boolean thumbnail = false;
+            // while (!thumbnail) {
+            // System.out.println("Set Thumbnail :");
+            // System.out.print("Press 1 to Upload Thumbnail: ");
+            // int confirm = sc.nextInt();
+            // if (confirm == 1) {
+            // System.out.println("Thumbnail Uploaded Successfully.");
+            // thumbnail = true;
+            // } else {
+            // System.out.println("Thumbnail Upload Failed. Please Re-Upload.");
+            // }
+            // }
+
+            System.out.print("Set Description     : ");
+            String description = sc.next() + sc.nextLine();
+
+            System.out.print("Input Video Duration (hh:mm:ss): ");
+            String duration = sc.next();
+
+            System.out.print("Upload (Y/N): ");
+            char upload = sc.next().charAt(0);
+
+            if (upload == 'Y' || upload == 'y') {
+                connection.setQuery("select MAX(idKonten) from Konten");
+                int maxIdKonten = Integer.parseInt(connection.exeQuery(1, 1).trim());
+                maxIdKonten += 1;
+                // System.out.println(maxIdKonten);
+                // System.out.println(duration);
+                // System.out.println(path);
+                // System.out.println(idKanal);
+                connection.setQuery("insert into Konten values ('" + maxIdKonten + "', '" + title + "', '" + description
+                        + "', '" + duration + "', '0', '" + path + "', '" + idKanal + "', null, '" + LocalDate.now()
+                        + "')");
+                connection.exeInsertQuery();
+                System.out.println("Video successfully uploaded.");
+                if (pembeda == 0) {
+                    channelIndividual();
+                } else {
+                    channelGroup();
+                }
+            } else {
+                System.out.println("Want to redo? (Y/N)");
+                char redo = sc.next().charAt(0);
+                if (redo == 'Y') {
+                    uploadVideo(pembeda, idKanal);
+                } else {
+                    System.out.println("Video upload failed.");
+                    if (pembeda == 0) {
+                        channelIndividual();
+                    } else {
+                        channelGroup();
+                    }
+                }
+            }
+        }
     }
 
     public static void viewChannelAnalysis(int pembeda, String idKanal) {
@@ -1256,7 +1502,48 @@ public class YoutubeUI {
         String idKanal = connection.exeQuery(1, 1).trim();
 
         switch (pilihan) {
+            case 1:
+                System.out.print("Are you sure want to take down this video (Y/N) ? ");
+                char confirmation = sc.next().charAt(0);
+                if (confirmation == 'Y') {
+                    connection.setQuery("update Konten set status_Penghapusan = 1 where idKonten=" + choice);
+                    connection.exeInsertQuery();
+                    connection.setQuery(
+                            "update Konten set tanggal_Takedown = '" + LocalDate.now() + "' where idKonten=" + choice);
+                    connection.exeInsertQuery();
+                    System.out.println("Video has been deleted successfully.");
+                } else {
+                    System.out.println("Video Take Down Cancelled.");
+                }
+                viewVideoList(pembeda, idKanal);
+                break;
+            case 2:
+                System.out.println("[1] : Edit Video Title");
+                System.out.println("[2] : Edit Video Description");
+                System.out.print("Please select menu: ");
 
+                int pilih = sc.nextInt();
+                if (pilih == 1) {
+                    System.out.print("Enter New Video Title : ");
+                    String titleBaru = sc.next() + sc.nextLine();
+                    connection.setQuery("update Konten set judul = '" + titleBaru + "' where idKonten = " + choice);
+                    connection.exeInsertQuery();
+                    connection.setQuery("insert into edit values(" + choice + ", " + currentUserId + ", '"
+                            + LocalDate.now() + "')");
+                    connection.exeInsertQuery();
+                }
+
+                else {
+                    System.out.print("Enter New Description: ");
+                    String newDesc = sc.nextInt() + sc.nextLine();
+                    connection.setQuery("update Konten set description = '" + newDesc + "' where idKonten = " + choice);
+                    connection.exeInsertQuery();
+                    connection.setQuery("insert into edit values(" + choice + ", " + currentUserId + ", '"
+                            + LocalDate.now() + "')");
+                    connection.exeInsertQuery();
+                }
+                viewVideoList(pembeda, idKanal);
+                break;
             default:
                 viewVideoList(pembeda, idKanal);
                 break;
@@ -1313,65 +1600,3 @@ public class YoutubeUI {
  * - view Channel Analysis
  * - manage video
  */
-
-/*
- * Implementasi Manajemen Upload Video
- * // Sistem hak akses owner
- * // Sprint 3
- * // Mengatur hak akses khusus owner agar dapat
- * // mengelola fitur dan data secara penuh,
- * // seperti mengakses channel, mengubah member,
- * // dan menginvite member.
- * /*
- * Sistem Hak Akses Subtitle Editor
- * /*
- * Implementasi Hak Akses Editor Limited
- * pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode
- * kode yang akan berguna bagi
- * UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video,
- * sistem sistem hak akses
- * hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses
- * subtitle dan hak akses editor,
- * viewer, DLL.
- * Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
- */
-*/
-
-// Implementasi sistem hak akses manager
-// Sprint 3
-// Mengatur hak akses manager agar dapat
-// memantau dan mengelola data sesuai
-// kewenangan.
-
-// Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
-// Aman ges
-
-//Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
-//Aman ges
-
-// Untuk fitur upload video pada kanal individu dan group
-// Pemilik kanal akan mampu untuk menambahkan video pada kaun kanal nya yang terintegrasi dengan DB
-// Disimpan dalam bentuk path yang nantinya akan bisa ditonton oleh user
-// Beranda Kanal akan membuat tampilan pada CLI yang menunjukan beranda pada kanal 
-// Didalamnya akan ada daftar video, Profil kanal, dan statistik singkat tentang kanal tersebut
-// 
-/*
- * connection.setQuery("update Pengguna set jabatan = '" + jabatan[choiceeee -
- * 1] + "' where namaP ='"
- * + memberName + "' and idKanal = '" + idKanal + "'");
- * connection.setQuery(
- * "update Pengguna set jabatan = null, tanggal_Undang = null, idKanal = null where namaP ='"
- * + memberName + "' and idKanal = '" + idKanal + "'");
- * connection.exeInsertQuery();
- * connection.setQuery(
- * "update KanalGroup set jumlah_Anggota = jumlah_Anggota -1 where idKanal ='" +
- * idKanal + "'");
- * connection.exeInsertQuery();
- */
-//i love the smell of gunpowder in the morning
-//Edit profil kanal individu & grup
-//Dashboard laporan performa
-
-
-//Testinggggg 222222222222222222222
-//Amannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
