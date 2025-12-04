@@ -1322,3 +1322,10 @@ hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subt
 viewer, DLL.
 Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 */
+
+// Implementasi sistem hak akses manager
+// Sprint 3
+// Mengatur hak akses manager agar dapat
+// memantau dan mengelola data sesuai
+// kewenangan.
+
