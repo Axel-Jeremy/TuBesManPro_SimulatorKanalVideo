@@ -1347,6 +1347,6 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 //Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 //Aman ges
 
-// Implementasi fitur dislike
+// Hapus video pada kanal individu & grup
 // Sprint 4
-// Mengimplementasikan fitur dislike
+// mengimplementasikan fitur hapus video untuk kedua tipe kanal
