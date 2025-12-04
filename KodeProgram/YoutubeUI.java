@@ -1346,31 +1346,7 @@ public class YoutubeUI {
 // Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 // Aman ges
 
-/*
- * System.out.println("\n\nNo-Username----------------Komen--------------");
- * connection.setQuery(
- * "select namaP, isiKomen from (select idPengguna, isiKomen from Komen where idKonten = '"
- * + choice
- * +
- * "') as komenKonten JOIN Pengguna ON Pengguna.idPengguna = komenKonten.idPengguna"
- * );
- * connection.printQuerywithNumber(2, Integer.MAX_VALUE);
- * System.out.println("------------------------------------------------");
- * 
- * System.out.println("Enter your comment here : ");
- * String comment = sc.nextLine();
- * sc.next();
- * System.out.println();
- * System.out.print("Do you want to publish this comment? (Y/N) : ");
- * String publish = sc.next();
- * 
- * if (publish.equalsIgnoreCase("Y")) {
- * connection.setQuery("insert into Komen values('" + choice + "', '" +
- * currentUserId + "', '"
- * + LocalDate.now() + "', '" + comment + "', '0')");
- * connection.exeInsertQuery();
- * System.out.println("Your comment has been successfully uploaded!");
- * }
- * 
- * 
- */
+
+// Implementasi fitur dislike
+// Sprint 4
+// Mengimplementasikan fitur dislike
