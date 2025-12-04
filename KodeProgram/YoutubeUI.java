@@ -810,8 +810,8 @@ public class YoutubeUI {
                 viewDashboardIndividual(idKanal);
                 break;
             // case 3:
-            //     uploadVideo(0, idKanal);
-            //     break;
+            // uploadVideo(0, idKanal);
+            // break;
             default:
                 menuAfterChannelCreatedIndividu();
                 break;
@@ -952,8 +952,8 @@ public class YoutubeUI {
                 viewDashboardGroup(idKanal);
                 break;
             // case 3:
-            //     uploadVideo(1, idKanal);
-            //     break;
+            // uploadVideo(1, idKanal);
+            // break;
             case 4:
                 viewMemberList(idKanal);
                 break;
@@ -1023,14 +1023,14 @@ public class YoutubeUI {
             System.out.print("Select Member to Edit: ");
             int pilihan = sc.nextInt();
 
-                editGroupMember(memberList[pilihan - 1], idKanal);
+            editGroupMember(memberList[pilihan - 1], idKanal);
 
-                System.out.print("Back to Channel? (Y/N): ");
-                if (sc.next().charAt(0) == 'Y') {
-                    channelGroup();
-                } else {
-                    viewMemberList(idKanal);
-                }
+            System.out.print("Back to Channel? (Y/N): ");
+            if (sc.next().charAt(0) == 'Y') {
+                channelGroup();
+            } else {
+                viewMemberList(idKanal);
+            }
         }
     }
 
@@ -1313,3 +1313,12 @@ public class YoutubeUI {
  * - view Channel Analysis
  * - manage video
  */
+
+
+// Sistem hak akses owner
+// Sprint 3
+// Mengatur hak akses khusus owner agar dapat
+// mengelola fitur dan data secara penuh,
+// seperti mengakses channel, mengubah member,
+// dan menginvite member.
+
