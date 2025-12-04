@@ -1345,6 +1345,6 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 //Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 //Aman ges
 
-// Beranda Kanal akan membuat tampilan pada CLI yang menunjukan beranda pada kanal 
-// Didalamnya akan ada daftar video, Profil kanal, dan statistik singkat tentang kanal tersebut
-// 
+// Untuk fitur upload video pada kanal individu dan group
+// Pemilik kanal akan mampu untuk menambahkan video pada kaun kanal nya yang terintegrasi dengan DB
+// Disimpan dalam bentuk path yang nantinya akan bisa ditonton oleh user
