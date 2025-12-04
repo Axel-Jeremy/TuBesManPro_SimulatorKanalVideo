@@ -1313,3 +1313,11 @@ public class YoutubeUI {
  * - view Channel Analysis
  * - manage video
  */
+
+
+// Implementasi sistem hak akses
+// Sprint 3
+// Mengatur hak akses manager agar dapat
+// memantau dan mengelola data sesuai
+// kewenangan.
+
