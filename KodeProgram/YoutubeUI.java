@@ -1346,6 +1346,12 @@ public class YoutubeUI {
 // Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 // Aman ges
 
+//Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
+//Aman ges
+
+// Beranda Kanal akan membuat tampilan pada CLI yang menunjukan beranda pada kanal 
+// Didalamnya akan ada daftar video, Profil kanal, dan statistik singkat tentang kanal tersebut
+// 
 /*
  * connection.setQuery("update Pengguna set jabatan = '" + jabatan[choiceeee -
  * 1] + "' where namaP ='"
