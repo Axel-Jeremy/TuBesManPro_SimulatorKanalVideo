@@ -1313,3 +1313,12 @@ public class YoutubeUI {
  * - view Channel Analysis
  * - manage video
  */
+
+/*
+Implementasi Manajemen edit video
+pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
+UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
+hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
+viewer, DLL.
+Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
+*/
