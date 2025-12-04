@@ -1314,25 +1314,27 @@ public class YoutubeUI {
  * - manage video
  */
 
-
 /*
-Implementasi Manajemen Upload Video
-// Sistem hak akses owner
-// Sprint 3
-// Mengatur hak akses khusus owner agar dapat
-// mengelola fitur dan data secara penuh,
-// seperti mengakses channel, mengubah member,
-// dan menginvite member.
-/*
-Sistem Hak Akses Subtitle Editor
-/*
-Implementasi Hak Akses Editor Limited
-pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
-UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
-hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
-viewer, DLL.
-Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
-*/
+ * Implementasi Manajemen Upload Video
+ * // Sistem hak akses owner
+ * // Sprint 3
+ * // Mengatur hak akses khusus owner agar dapat
+ * // mengelola fitur dan data secara penuh,
+ * // seperti mengakses channel, mengubah member,
+ * // dan menginvite member.
+ * /*
+ * Sistem Hak Akses Subtitle Editor
+ * /*
+ * Implementasi Hak Akses Editor Limited
+ * pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode
+ * kode yang akan berguna bagi
+ * UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video,
+ * sistem sistem hak akses
+ * hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses
+ * subtitle dan hak akses editor,
+ * viewer, DLL.
+ * Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
+ */
 */
 
 // Implementasi sistem hak akses manager
@@ -1341,11 +1343,9 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 // memantau dan mengelola data sesuai
 // kewenangan.
 
+// Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
+// Aman ges
 
-
-
-//Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
-//Aman ges
 
 // Implementasi fitur dislike
 // Sprint 4
