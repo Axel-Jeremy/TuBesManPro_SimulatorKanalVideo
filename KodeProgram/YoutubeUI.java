@@ -1315,7 +1315,7 @@ public class YoutubeUI {
  */
 
 /*
-Implementasi Manajemen remove video
+Implementasi Hak Akses Editor
 pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
 UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
 hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
