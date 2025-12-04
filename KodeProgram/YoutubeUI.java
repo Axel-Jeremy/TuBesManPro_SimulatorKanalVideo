@@ -1314,26 +1314,27 @@ public class YoutubeUI {
  * - manage video
  */
 
-
 /*
-Implementasi Manajemen Upload Video
-// Sistem hak akses owner
-// Sprint 3
-// Mengatur hak akses khusus owner agar dapat
-// mengelola fitur dan data secara penuh,
-// seperti mengakses channel, mengubah member,
-// dan menginvite member.
-/*
-Sistem Hak Akses Subtitle Editor
-/*
-Implementasi Hak Akses Editor Limited
-pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
-UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
-hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
-viewer, DLL.
-Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
-*/
-*/
+ * Implementasi Manajemen Upload Video
+ * // Sistem hak akses owner
+ * // Sprint 3
+ * // Mengatur hak akses khusus owner agar dapat
+ * // mengelola fitur dan data secara penuh,
+ * // seperti mengakses channel, mengubah member,
+ * // dan menginvite member.
+ * /*
+ * Sistem Hak Akses Subtitle Editor
+ * /*
+ * Implementasi Hak Akses Editor Limited
+ * pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode
+ * kode yang akan berguna bagi
+ * UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video,
+ * sistem sistem hak akses
+ * hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses
+ * subtitle dan hak akses editor,
+ * viewer, DLL.
+ * Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
+ */
 
 // Implementasi sistem hak akses manager
 // Sprint 3
@@ -1341,9 +1342,52 @@ Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
 // memantau dan mengelola data sesuai
 // kewenangan.
 
+// Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
+// Aman ges
 
-
-
-//Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
-//Aman ges
-
+/*
+ * connection.
+ * setQuery("select Kanal.namaKanal from (select idKanal from Subscribe where idPengguna = '"
+ * + currentUserId +
+ * "') as kanalSubs JOIN Kanal ON kanalSubs.idKanal = Kanal.idKanal");
+ * 
+ * 
+ * connection.setQuery("select idKanal from Konten where idKonten = '" + choice
+ * + "'");
+ * String idKanal = connection.exeQuery(1, 1).trim();
+ * 
+ * connection.
+ * setQuery("select status_Penghapusan from Subscribe where idPengguna = '" +
+ * currentUserId
+ * + "' and idKanal = '" + idKanal + "'");
+ * 
+ * 
+ * res = connection.exeQuery(1, 1).trim();
+ * 
+ * if (res.equals("")) {
+ * connection
+ * .setQuery("insert into Subscribe values ('" + idKanal + "', '" +
+ * currentUserId + "', '"
+ * + LocalDate.now() + "', null, '0')");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully subscribed the video.");
+ * } else if (res.equals("1")) {
+ * connection.
+ * setQuery("update Subscribe set status_Penghapusan = '0', tanggalSubscribe ='"
+ * + LocalDate.now() + "' where idPengguna = '" + currentUserId +
+ * "' and idKanal = '"
+ * + idKanal + "'");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully subscribed the video.");
+ * } else {
+ * connection.
+ * setQuery("update Subscribe set status_Penghapusan = '1', tanggalUnsubscribe ='"
+ * + LocalDate.now() + "' where idPengguna = '" + currentUserId +
+ * "' and idKanal = '"
+ * + idKanal + "'");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully un-subscribed the video.");
+ */
