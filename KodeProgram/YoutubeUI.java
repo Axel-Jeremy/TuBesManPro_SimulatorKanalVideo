@@ -1346,6 +1346,49 @@ public class YoutubeUI {
 // Testinggggggggggggggggggggggggggggggggggggggggggggggggggg
 // Aman ges
 
-// Hapus video pada kanal individu & grup
-// Sprint 4
-// mengimplementasikan fitur hapus video untuk kedua tipe kanal
+/*
+ * connection.
+ * setQuery("select Kanal.namaKanal from (select idKanal from Subscribe where idPengguna = '"
+ * + currentUserId +
+ * "') as kanalSubs JOIN Kanal ON kanalSubs.idKanal = Kanal.idKanal");
+ * 
+ * 
+ * connection.setQuery("select idKanal from Konten where idKonten = '" + choice
+ * + "'");
+ * String idKanal = connection.exeQuery(1, 1).trim();
+ * 
+ * connection.
+ * setQuery("select status_Penghapusan from Subscribe where idPengguna = '" +
+ * currentUserId
+ * + "' and idKanal = '" + idKanal + "'");
+ * 
+ * 
+ * res = connection.exeQuery(1, 1).trim();
+ * 
+ * if (res.equals("")) {
+ * connection
+ * .setQuery("insert into Subscribe values ('" + idKanal + "', '" +
+ * currentUserId + "', '"
+ * + LocalDate.now() + "', null, '0')");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully subscribed the video.");
+ * } else if (res.equals("1")) {
+ * connection.
+ * setQuery("update Subscribe set status_Penghapusan = '0', tanggalSubscribe ='"
+ * + LocalDate.now() + "' where idPengguna = '" + currentUserId +
+ * "' and idKanal = '"
+ * + idKanal + "'");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully subscribed the video.");
+ * } else {
+ * connection.
+ * setQuery("update Subscribe set status_Penghapusan = '1', tanggalUnsubscribe ='"
+ * + LocalDate.now() + "' where idPengguna = '" + currentUserId +
+ * "' and idKanal = '"
+ * + idKanal + "'");
+ * connection.exeInsertQuery();
+ * 
+ * System.out.println("You have successfully un-subscribed the video.");
+ */
