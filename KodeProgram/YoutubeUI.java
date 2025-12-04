@@ -1360,3 +1360,4 @@ public class YoutubeUI {
  * connection.exeInsertQuery();
  */
 //i love the smell of gunpowder in the morning
+//Edit profil kanal individu & grup
