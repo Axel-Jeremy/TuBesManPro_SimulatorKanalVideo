@@ -1321,4 +1321,21 @@ public class YoutubeUI {
 // mengelola fitur dan data secara penuh,
 // seperti mengakses channel, mengubah member,
 // dan menginvite member.
+/*
+Sistem Hak Akses Subtitle Editor
+/*
+Implementasi Hak Akses Editor Limited
+pada sprint ke 3 ini, kelompok akan membuat Berbagai jenis implementasi kode kode yang akan berguna bagi
+UI CLI Youtube nantinya akan berisi Upload video, edit video, remove video, sistem sistem hak akses
+hak owner juga akan dijelaskan pada kode ini. Kemudian ada sistem hak akses subtitle dan hak akses editor,
+viewer, DLL.
+Sprint ini akan diakhiri oleh testing oleh 3 tester dan 1 Backend Developer.
+*/
+*/
+
+// Implementasi sistem hak akses manager
+// Sprint 3
+// Mengatur hak akses manager agar dapat
+// memantau dan mengelola data sesuai
+// kewenangan.
 
